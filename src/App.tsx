@@ -2,12 +2,11 @@ import { useState } from "react";
 import { useTasks } from "./hooks/useTasks";
 import "./App.css";
 
-type Filter = "all" | "active" | "done";
+type Filter = "all" | "active";
 
 const FILTER_ITEMS: { key: Filter; label: string }[] = [
   { key: "all", label: "All" },
   { key: "active", label: "Active" },
-  { key: "done", label: "Done" },
 ];
 
 export default function App() {
@@ -17,7 +16,6 @@ export default function App() {
 
   const filteredTasks = tasks.filter((task) => {
     if (filter === "active") return !task.done;
-    if (filter === "done") return task.done;
     return true;
   });
 
