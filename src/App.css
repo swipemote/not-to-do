@@ -323,14 +323,12 @@
 }
 
 .task-form button,
-.filter-row button,
 .delete-button,
 .task-title {
   font: inherit;
 }
 
-.task-form button,
-.filter-row button {
+.task-form button {
   border: 2px solid var(--dusty-red-dark);
   border-radius: 999px;
   background: #b67a6a;
@@ -341,36 +339,13 @@
   box-shadow: 0 4px 0 rgba(122, 67, 54, 0.45);
 }
 
-.task-form button:hover,
-.filter-row button:hover {
+.task-form button:hover {
   transform: translateY(-1px);
 }
 
-.task-form button:active,
-.filter-row button:active {
+.task-form button:active {
   transform: translateY(2px);
   box-shadow: 0 1px 0 rgba(122, 67, 54, 0.45);
-}
-
-.filter-row {
-  margin-top: 16px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.filter-row button {
-  background: #e8c5a5;
-  color: #694f41;
-  border-color: #b68f72;
-  box-shadow: 0 3px 0 rgba(124, 90, 63, 0.3);
-  min-width: 90px;
-}
-
-.filter-row button.is-active {
-  background: var(--dusty-red);
-  border-color: var(--dusty-red-dark);
-  color: #fff8ee;
 }
 
 .task-list {
@@ -461,13 +436,8 @@
     grid-template-columns: 1fr;
   }
 
-  .task-form button,
-  .filter-row button {
+  .task-form button {
     width: 100%;
-  }
-
-  .filter-row {
-    gap: 8px;
   }
 
   .title-copy h1 {

@@ -2,22 +2,9 @@ import { useState } from "react";
 import { useTasks } from "./hooks/useTasks";
 import "./App.css";
 
-type Filter = "all" | "active";
-
-const FILTER_ITEMS: { key: Filter; label: string }[] = [
-  { key: "all", label: "All" },
-  { key: "active", label: "Active" },
-];
-
 export default function App() {
   const { tasks, dispatch } = useTasks();
   const [title, setTitle] = useState("");
-  const [filter, setFilter] = useState<Filter>("all");
-
-  const filteredTasks = tasks.filter((task) => {
-    if (filter === "active") return !task.done;
-    return true;
-  });
 
   return (
     <main className="mockup-page">
@@ -68,26 +55,13 @@ export default function App() {
           <button type="submit">追加</button>
         </form>
 
-        <div className="filter-row">
-          {FILTER_ITEMS.map((item) => (
-            <button
-              key={item.key}
-              type="button"
-              className={filter === item.key ? "is-active" : ""}
-              onClick={() => setFilter(item.key)}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-
         <ul className="task-list">
-          {filteredTasks.length === 0 ? (
+          {tasks.length === 0 ? (
             <li className="empty-state">
               まだ何も置かれていません。無理しない姿勢は、もうできています。
             </li>
           ) : (
-            filteredTasks.map((task) => (
+            tasks.map((task) => (
               <li key={task.id} className={task.done ? "task done" : "task"}>
                 <button
                   type="button"
