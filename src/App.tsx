@@ -27,8 +27,8 @@ export default function App() {
         <header className="card-header">
           <div className="title-copy">
             <p className="eyebrow">Not-To-Do</p>
-            <h1>やらないことにも、ちゃんと居場所を。</h1>
-            <p className="subtitle">リモコン片手に、静かに手放すタスク管理。</p>
+            <h1>やらないことを決めよう。</h1>
+            <p className="subtitle">何をやらない？</p>
           </div>
 
           <div className="illustration" aria-hidden="true">
