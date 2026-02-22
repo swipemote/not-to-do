@@ -26,9 +26,9 @@ export default function App() {
       <section className="paper-card">
         <header className="card-header">
           <div className="title-copy">
-            <p className="eyebrow">Good Enough Productivity Club</p>
-            <h1>Not-To-Do App</h1>
-            <p className="subtitle">今日は頑張らないことを、ちゃんと頑張って決める。</p>
+            <p className="eyebrow">Not-To-Do</p>
+            <h1>やらないことにも、ちゃんと居場所を。</h1>
+            <p className="subtitle">リモコン片手に、静かに手放すタスク管理。</p>
           </div>
 
           <div className="illustration" aria-hidden="true">
@@ -64,8 +64,8 @@ export default function App() {
           <input
             value={title}
             onChange={(event) => setTitle(event.target.value)}
-            placeholder="今週やらないことを入力"
-            aria-label="今週やらないことを入力"
+            placeholder="やらないことを、ひとつ置いていく"
+            aria-label="やらないことを、ひとつ置いていく"
           />
           <button type="submit">追加</button>
         </form>
@@ -85,7 +85,9 @@ export default function App() {
 
         <ul className="task-list">
           {filteredTasks.length === 0 ? (
-            <li className="empty-state">今のところ、サボり予定は完璧です。</li>
+            <li className="empty-state">
+              まだ何も置かれていません。無理しない姿勢は、もうできています。
+            </li>
           ) : (
             filteredTasks.map((task) => (
               <li key={task.id} className={task.done ? "task done" : "task"}>
